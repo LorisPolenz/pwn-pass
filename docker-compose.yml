@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: pwn-pass-frontend
+    build: ./fontend
+    ports:
+      - "64054:80"
+  backend:
+    container_name: pwn-pass-backend
+    build: ./backend
+    ports:
+      - "64053:80"
+    links:
+      - "db:database"
+  database:
+    image: mongo:5.0
+    container_name: pwn-pass-database
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+networks:
+  default:
+    external:
+      name: pwn-pass-network

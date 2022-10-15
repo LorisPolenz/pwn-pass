@@ -1,13 +1,13 @@
 package main
 
 import (
-	"backend/modules/database"
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"
+	"main/modules/database"
 	"net/http"
 )
 
